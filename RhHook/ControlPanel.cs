@@ -542,7 +542,7 @@ namespace RhHook
                 seconds = 0;
             }
 
-            if(seconds == 3600)
+            if(seconds == 3600 || seconds == 7200 || seconds == 10800)
             {
                 Notice.SendNotice(this.textBox2.Text, 1);
             }
