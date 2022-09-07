@@ -48,11 +48,17 @@ namespace RhHook
         private Label label10;
         private Label label8;
         private Timer timer5;
+        private GroupBox groupBox3;
+        private TextBox textBox1;
+        private Button button1;
+        private GroupBox groupBox5;
+        private TextBox textBox2;
         private Button bnReloadEventBins;
 
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlPanel));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
@@ -67,9 +73,16 @@ namespace RhHook
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.timer5 = new System.Windows.Forms.Timer(this.components);
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -201,16 +214,71 @@ namespace RhHook
             // 
             this.timer5.Tick += new System.EventHandler(this.timer5_Tick);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Location = new System.Drawing.Point(277, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(549, 166);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Send Notice";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(15, 34);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(518, 93);
+            this.textBox1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(371, 133);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(162, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Send Notice";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.textBox2);
+            this.groupBox5.Location = new System.Drawing.Point(277, 184);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(549, 133);
+            this.groupBox5.TabIndex = 5;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Automated Notice every 1 Hour";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(15, 29);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(518, 90);
+            this.textBox2.TabIndex = 0;
+            this.textBox2.Text = "This is Automated Message";
+            // 
             // ControlPanel
             // 
-            this.ClientSize = new System.Drawing.Size(838, 341);
+            this.ClientSize = new System.Drawing.Size(839, 333);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ControlPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Rohan: Geizan";
             this.Load += new System.EventHandler(this.ControlPanel_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -218,6 +286,10 @@ namespace RhHook
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
     }
@@ -438,7 +510,7 @@ namespace RhHook
             seconds++;
             this.label3.Text = seconds.ToString();
 
-            if (label3.Text == "10800")
+            if (seconds == 10800)
             {
                 try
                 {
@@ -469,6 +541,11 @@ namespace RhHook
                 }
                 seconds = 0;
             }
+
+            if(seconds == 3600)
+            {
+                Notice.SendNotice(this.textBox2.Text, 1);
+            }
         }
 
         private void timer4_Tick(object sender, EventArgs e)
@@ -479,7 +556,7 @@ namespace RhHook
             {
                 string[] array = File.ReadAllLines("config.txt");
                 SqlConnection selectConnection = new SqlConnection(array[6]);
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM RohanEvents.dbo.TSpawner where respawn_time = '" + this.label2.Text + "'", selectConnection);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM RohanEvents.dbo.TNormalBoss where respawn_time = '" + this.label2.Text + "'", selectConnection);
                 DataTable dataTable = new DataTable();
                 sqlDataAdapter.Fill(dataTable);
                 for (int i = 0; i < dataTable.Rows.Count; i++)
@@ -520,7 +597,7 @@ namespace RhHook
             {
                 string[] array = File.ReadAllLines("config.txt");
                 SqlConnection selectConnection = new SqlConnection(array[6]);
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM RohanEvents.dbo.TSpawner where respawn_time = '" + this.label10.Text + "' and day = '" + this.label8.Text + "'", selectConnection);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM RohanEvents.dbo.TWorldBoss where respawn_time = '" + this.label10.Text + "' and day = '" + this.label8.Text + "'", selectConnection);
                 DataTable dataTable = new DataTable();
                 sqlDataAdapter.Fill(dataTable);
                 for (int i = 0; i < dataTable.Rows.Count; i++)
@@ -543,6 +620,11 @@ namespace RhHook
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Notice.SendNotice(this.textBox1.Text, 1);
         }
     }
 }
