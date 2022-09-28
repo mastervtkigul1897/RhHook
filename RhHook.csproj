@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\sanctum_Backup_Full\RhHook.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0EB2ABC5-6FC7-4481-86D1-6660E335D1D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>RhHook</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Detours">
+      <HintPath>..\..\..\..\..\Epoch\sudo\Detours.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RhHook\ControlPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RhHook\GlobalData.cs" />
+    <Compile Include="RhHook\UnmanagedExports.cs" />
+    <Compile Include="RhHook\ProcHelper.cs" />
+    <Compile Include="RhHook\DetouredFunctions\CBattleManager.cs" />
+    <Compile Include="RhHook\DetouredFunctions\CBiotic.cs" />
+    <Compile Include="RhHook\DetouredFunctions\CDBConnection.cs" />
+    <Compile Include="RhHook\DetouredFunctions\CEntityManager.cs" />
+    <Compile Include="RhHook\DetouredFunctions\CEpochItemScriptManager.cs" />
+    <Compile Include="RhHook\DetouredFunctions\CInventorySlotManager.cs" />
+    <Compile Include="RhHook\DetouredFunctions\CMapConnection.cs" />
+    <Compile Include="RhHook\DetouredFunctions\CPlayer.cs" />
+    <Compile Include="RhHook\DetouredFunctions\CPlayerItemSlotBaseManager.cs" />
+    <Compile Include="RhHook\DetouredFunctions\CPlayerItemSlotManager.cs" />
+    <Compile Include="RhHook\DetouredFunctions\CSkillManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CActiveQuests.cs" />
+    <Compile Include="RhHook\MapFunctions\CAIBiotic.cs" />
+    <Compile Include="RhHook\MapFunctions\CBattleManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CCompletedQuests.cs" />
+    <Compile Include="RhHook\MapFunctions\CCrime.cs" />
+    <Compile Include="RhHook\MapFunctions\CEntityScriptManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CGateCharManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CGOProtocol.cs" />
+    <Compile Include="RhHook\MapFunctions\CInventorySlot.cs" />
+    <Compile Include="RhHook\MapFunctions\CIOSocket.cs" />
+    <Compile Include="RhHook\MapFunctions\CItemSocketScirpt.cs" />
+    <Compile Include="RhHook\MapFunctions\CLogBase.cs" />
+    <Compile Include="RhHook\MapFunctions\CMapStringToPtr.cs" />
+    <Compile Include="RhHook\MapFunctions\CMobSubQuestMap.cs" />
+    <Compile Include="RhHook\MapFunctions\CObject.cs" />
+    <Compile Include="RhHook\MapFunctions\CAIConnection.cs" />
+    <Compile Include="RhHook\MapFunctions\CAliveCall.cs" />
+    <Compile Include="RhHook\MapFunctions\CAttackInfo.cs" />
+    <Compile Include="RhHook\MapFunctions\CBattleInfo.cs" />
+    <Compile Include="RhHook\MapFunctions\CBiotic.cs" />
+    <Compile Include="RhHook\MapFunctions\CBioticBase.cs" />
+    <Compile Include="RhHook\MapFunctions\CCellManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CCellMgr.cs" />
+    <Compile Include="RhHook\MapFunctions\CCollectGradeManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CDeathNote.cs" />
+    <Compile Include="RhHook\MapFunctions\CEntityBase.cs" />
+    <Compile Include="RhHook\MapFunctions\CEntityBaseStatus.cs" />
+    <Compile Include="RhHook\MapFunctions\CEntityCreater.cs" />
+    <Compile Include="RhHook\MapFunctions\CEntityManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CEpochBinFile.cs" />
+    <Compile Include="RhHook\MapFunctions\CEpochItemScriptManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CFriendManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CFriendMgr.cs" />
+    <Compile Include="RhHook\MapFunctions\CGambleInfo.cs" />
+    <Compile Include="RhHook\MapFunctions\CGeoRandom.cs" />
+    <Compile Include="RhHook\MapFunctions\CGMCommand.cs" />
+    <Compile Include="RhHook\MapFunctions\CGOConnection.cs" />
+    <Compile Include="RhHook\MapFunctions\CGOInterlocked.cs" />
+    <Compile Include="RhHook\MapFunctions\CHostility.cs" />
+    <Compile Include="RhHook\MapFunctions\CHostilityBase.cs" />
+    <Compile Include="RhHook\MapFunctions\CIdAllocator.cs" />
+    <Compile Include="RhHook\MapFunctions\CInventorySlotManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CInventoryState.cs" />
+    <Compile Include="RhHook\MapFunctions\CIOBase.cs" />
+    <Compile Include="RhHook\MapFunctions\CIOCriticalSection.cs" />
+    <Compile Include="RhHook\MapFunctions\CIOObject.cs" />
+    <Compile Include="RhHook\MapFunctions\CLiveTimer.cs" />
+    <Compile Include="RhHook\MapFunctions\CLog.cs" />
+    <Compile Include="RhHook\MapFunctions\CMapConnection.cs" />
+    <Compile Include="RhHook\MapFunctions\CMonster.cs" />
+    <Compile Include="RhHook\MapFunctions\CNGuildPlayerQueue.cs" />
+    <Compile Include="RhHook\MapFunctions\CPet.cs" />
+    <Compile Include="RhHook\MapFunctions\CPetBase.cs" />
+    <Compile Include="RhHook\MapFunctions\CPKList.cs" />
+    <Compile Include="RhHook\MapFunctions\CPKState.cs" />
+    <Compile Include="RhHook\MapFunctions\CPKSystem.cs" />
+    <Compile Include="RhHook\MapFunctions\CPlayer.cs" />
+    <Compile Include="RhHook\MapFunctions\CPlayerHostility.cs" />
+    <Compile Include="RhHook\MapFunctions\CPlayerItemSlotBaseManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CPlayerItemSlotManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CPlayerMapMemo.cs" />
+    <Compile Include="RhHook\MapFunctions\CPlayerSocketManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CPostItemBox.cs" />
+    <Compile Include="RhHook\MapFunctions\CPVPSystem.cs" />
+    <Compile Include="RhHook\MapFunctions\CQualities.cs" />
+    <Compile Include="RhHook\MapFunctions\CQualitiesOption.cs" />
+    <Compile Include="RhHook\MapFunctions\CTradeItemMallList.cs" />
+    <Compile Include="RhHook\MapFunctions\CRankLevelManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CRecipeManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CRemainedTimer.cs" />
+    <Compile Include="RhHook\MapFunctions\CRohanConnection.cs" />
+    <Compile Include="RhHook\MapFunctions\CSkill.cs" />
+    <Compile Include="RhHook\MapFunctions\CSkillEvent.cs" />
+    <Compile Include="RhHook\MapFunctions\CSkillManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CSkillScript.cs" />
+    <Compile Include="RhHook\MapFunctions\CSkillSlot.cs" />
+    <Compile Include="RhHook\MapFunctions\CTimer.cs" />
+    <Compile Include="RhHook\MapFunctions\CTimerEndItemManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CTimerItemManager.cs" />
+    <Compile Include="RhHook\MapFunctions\CTradeItemList.cs" />
+    <Compile Include="RhHook\MapFunctions\EpochItem.cs" />
+    <Compile Include="RhHook\MapFunctions\EpochItemBase.cs" />
+    <Compile Include="RhHook\MapFunctions\CEpochItemScript.cs" />
+    <Compile Include="RhHook\MapFunctions\EpochItemManager.cs" />
+    <Compile Include="RhHook\MapFunctions\MercenaryManager.cs" />
+    <Compile Include="RhHook\MapFunctions\Mercenary_Employ_Manager.cs" />
+    <Compile Include="RhHook\MapFunctions\Mercenary_Task_Manager.cs" />
+    <Compile Include="RhHook\MapFunctions\MISC.cs" />
+    <Compile Include="RhHook\MapFunctions\PKListManager.cs" />
+    <Compile Include="RhHook\MapFunctions\PVPNote.cs" />
+    <Compile Include="RhHook\MapFunctions\RepairMgr.cs" />
+    <Compile Include="RhHook\MapFunctions\SBattleContext.cs" />
+    <Compile Include="RhHook\MapFunctions\_tagAffectSkill.cs" />
+    <Compile Include="RhHook\MapFunctions\__tagItem.cs" />
+    <Compile Include="RhHook\Util\BinReader.cs" />
+    <Compile Include="RhHook\Util\ChatFilter.cs" />
+    <Compile Include="RhHook\Util\CommandConsole.cs" />
+    <Compile Include="RhHook\Util\CryptoRandom.cs" />
+    <Compile Include="RhHook\Util\FunctionInfo.cs" />
+    <Compile Include="RhHook\Util\Guard.cs" />
+    <Compile Include="RhHook\Util\Hooks.cs" />
+    <Compile Include="RhHook\Util\Invoke.cs" />
+    <Compile Include="RhHook\Util\Logger.cs" />
+    <Compile Include="RhHook\Util\LogMessageInfo.cs" />
+    <Compile Include="RhHook\Util\Log.cs" />
+    <Compile Include="RhHook\Util\Etx.cs" />
+    <Compile Include="RhHook\Util\Misc.cs" />
+    <Compile Include="RhHook\Util\Notice.cs" />
+    <Compile Include="RhHook\Util\SummonTools.cs" />
+    <Compile Include="RhHook\Data\TagRequest_MAP_COMPOSITION_ITEM_CONSER.cs" />
+    <Compile Include="RhHook\Data\_rcmRequestMapPetPickupItem.cs" />
+    <Compile Include="RhHook\Data\_tagMATERIAL_INFO_1.cs" />
+    <Compile Include="RhHook\Data\RohanStructs.cs" />
+    <Compile Include="RhHook\Data\Bin`1.cs" />
+    <Compile Include="RhHook\Data\IBin.cs" />
+    <Compile Include="RhHook\Data\Bins.cs" />
+    <Compile Include="RhHook\Data\iStructure.cs" />
+    <Compile Include="RhHook\Data\SITEMOPTIONATTR.cs" />
+    <Compile Include="RhHook\Data\ECONDITIONSTATE.cs" />
+    <Compile Include="RhHook\Data\Itemattributetype.cs" />
+    <Compile Include="RhHook\Data\SkillIdx.cs" />
+    <Compile Include="RhHook\Data\ESKILLABILITYOPTIONTYPE.cs" />
+    <Compile Include="RhHook\Data\ECHARACTERABILITY.cs" />
+    <Compile Include="RhHook\Data\EITEMTYPE.cs" />
+    <Compile Include="RhHook\Data\EATTACKTYPE.cs" />
+    <Compile Include="RhHook\Data\EITEMOPTIONTYPE.cs" />
+    <Compile Include="RhHook\Data\EITEMABILITYOPTIONTYPE.cs" />
+    <Compile Include="RhHook\Data\rc4_key_st.cs" />
+    <Compile Include="RhHook\Data\_tagSetfileinfo.cs" />
+    <Compile Include="RhHook\Data\CCSAuth3.cs" />
+    <Compile Include="RhHook\Data\_OVERLAPPED.cs" />
+    <Compile Include="RhHook\Data\in_addr.cs" />
+    <Compile Include="RhHook\Data\sockaddr_in.cs" />
+    <Compile Include="RhHook\Data\CLink.cs" />
+    <Compile Include="RhHook\Data\AchieveScriptManager.cs" />
+    <Compile Include="RhHook\Data\SetItemScritpManager.cs" />
+    <Compile Include="RhHook\Data\CRWLock.cs" />
+    <Compile Include="RhHook\Data\_tagSkill.cs" />
+    <Compile Include="RhHook\Data\SATTACKORDER.cs" />
+    <Compile Include="RhHook\Data\_tagGR_ATTACKER.cs" />
+    <Compile Include="RhHook\Data\_tagGR_ATTACKEE.cs" />
+    <Compile Include="RhHook\Data\SATTACKRESULT.cs" />
+    <Compile Include="RhHook\Data\_tagSkillInfo.cs" />
+    <Compile Include="RhHook\Data\EpochID2.cs" />
+    <Compile Include="RhHook\Data\EpochVector3.cs" />
+    <Compile Include="RhHook\Data\_RTL_CRITICAL_SECTION.cs" />
+    <Compile Include="RhHook\Data\EpochEntityClassType.cs" />
+    <Compile Include="RhHook\Data\StateID2.cs" />
+    <Compile Include="RhHook\Data\_tagGR_PRIVATE_SHOP_INFO.cs" />
+    <Compile Include="RhHook\Data\_tagGR_ITEMOPTION.cs" />
+    <Compile Include="RhHook\Data\__tagOptions.cs" />
+    <Compile Include="RhHook\Data\__tagItem.cs" />
+    <Compile Include="RhHook\Data\_tagResponseMapPartyMatchingList.cs" />
+    <Compile Include="RhHook\Data\_tagArticle.cs" />
+    <Compile Include="RhHook\Data\_tagBASKET.cs" />
+    <Compile Include="RhHook\Data\_tagItemInBasket.cs" />
+    <Compile Include="RhHook\Data\_tagGR_HONOR_PVP_POINT.cs" />
+    <Compile Include="RhHook\Data\SetItem_SetItemManager.cs" />
+    <Compile Include="RhHook\Data\_tagFriendInfo.cs" />
+    <Compile Include="RhHook\Data\_rcmRequestMapMoveItem.cs" />
+    <Compile Include="RhHook\Data\_tagRcResAffectSkillEvent.cs" />
+    <Compile Include="RhHook\Data\_rcmResponseMapDropItem.cs" />
+    <Compile Include="RhHook\Data\_tagResponseGetItemOfCharacter.cs" />
+    <Compile Include="RhHook\Data\_tagResponseGetItemOfCharacterPacket.cs" />
+    <Compile Include="RhHook\Data\_tagRcResAffectSkillEvent_new.cs" />
+    <Compile Include="RhHook\Data\_tagNewEntityItem.cs" />
+    <Compile Include="RhHook\Data\_tagGR_LINK_CHAT.cs" />
+    <Compile Include="RhHook\Data\UnmanagedVector.cs" />
+    <Compile Include="RhHook\Data\_tagEpochID2.cs" />
+    <Compile Include="RhHook\Data\_tagITEM_INFO.cs" />
+    <Compile Include="RhHook\Data\_tagSkillLevelInfo.cs" />
+    <Compile Include="RhHook\Data\SkillParams.cs" />
+    <Compile Include="RhHook\Data\_tagCharacterStatusInfo.cs" />
+    <Compile Include="RhHook\Data\_tagEpochVector3.cs" />
+    <Compile Include="RhHook\Data\_tagAffectSkill.cs" />
+    <Compile Include="RhHook\Data\_tagAffectSkill_new.cs" />
+    <Compile Include="RhHook\Data\SBattleContext.cs" />
+    <Compile Include="RhHook\Data\PosEditorVariable.cs" />
+    <Compile Include="RhHook\Data\_tagRequestCOMM_ONETOONE_MSG.cs" />
+    <Compile Include="RhHook\Data\_tagRequestLEARNSKILL.cs" />
+    <Compile Include="RhHook\Data\_tagRequestMapIndunBuyItem.cs" />
+    <Compile Include="RhHook\Data\_tagRequestMAP_PVPARENA_MALL_ITEM_BUY.cs" />
+    <Compile Include="RhHook\Data\_tagRequestMAP_TELEPORT.cs" />
+    <Compile Include="RhHook\Data\_tagRequestMAP_USE_DC_ITEM.cs" />
+    <Compile Include="RhHook\Data\_tagRequestMAP_SELLITEMTONPC_1.cs" />
+    <Compile Include="RhHook\Data\_rcmRequestMapDropItem.cs" />
+    <Compile Include="RhHook\Data\_tagRequestMAP_USESCROLL_1.cs" />
+    <Compile Include="RhHook\Data\_tagRequestMAP_USE_MARRIAGERING.cs" />
+    <Compile Include="RhHook\Data\_tagRequestMAP_USEFIRECRACKER.cs" />
+    <Compile Include="RhHook\Data\_tagRcResLearnSkill.cs" />
+    <Compile Include="RhHook\Data\_tagResponseMAP_DailyLogin.cs" />
+    <Compile Include="RhHook\Data\_tagResponseMAP_PRIVATE_SHOP_SEARCH.cs" />
+    <Compile Include="RhHook\Data\tagResponseMAPPETLEVELUP.cs" />
+    <Compile Include="RhHook\Data\_rcmResponseMapItemOfCharacter.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RhHook\ControlPanel.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
